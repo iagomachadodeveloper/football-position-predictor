@@ -1,0 +1,243 @@
+/* ============================================
+   Football Position Predictor - Styles
+   ============================================ */
+
+body {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ---- Loading Overlay ---- */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+}
+
+.loading-content {
+    max-width: 500px;
+    padding: 2rem;
+}
+
+.training-stats {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* ---- Formation Buttons ---- */
+.formation-btn {
+    min-width: 80px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* ---- Characteristic Buttons ---- */
+.characteristic-btn {
+    border-radius: 20px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.characteristic-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ---- Prediction Top Result ---- */
+.prediction-top {
+    background: linear-gradient(135deg, rgba(25, 135, 84, 0.05), rgba(25, 135, 84, 0.1));
+    border-radius: 8px;
+    padding: 0.75rem;
+    border: 1px solid rgba(25, 135, 84, 0.2);
+}
+
+/* ---- Football Field ---- */
+.football-field {
+    position: relative;
+    width: 100%;
+    padding-bottom: 140%;
+    background: linear-gradient(180deg,
+        #2d8a4e 0%,
+        #34a058 5%,
+        #2d8a4e 10%,
+        #34a058 15%,
+        #2d8a4e 20%,
+        #34a058 25%,
+        #2d8a4e 30%,
+        #34a058 35%,
+        #2d8a4e 40%,
+        #34a058 45%,
+        #2d8a4e 50%,
+        #34a058 55%,
+        #2d8a4e 60%,
+        #34a058 65%,
+        #2d8a4e 70%,
+        #34a058 75%,
+        #2d8a4e 80%,
+        #34a058 85%,
+        #2d8a4e 90%,
+        #34a058 95%,
+        #2d8a4e 100%
+    );
+    border: 3px solid #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Linha central */
+.field-center-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Círculo central */
+.field-center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20%;
+    padding-bottom: 14%;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Áreas de penalidade */
+.field-penalty-area {
+    position: absolute;
+    left: 20%;
+    width: 60%;
+    height: 12%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.field-penalty-top {
+    top: 0;
+    border-top: none;
+}
+
+.field-penalty-bottom {
+    bottom: 0;
+    border-bottom: none;
+}
+
+/* Pequena área */
+.field-goal-area {
+    position: absolute;
+    left: 32%;
+    width: 36%;
+    height: 5%;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.field-goal-top {
+    top: 0;
+    border-top: none;
+}
+
+.field-goal-bottom {
+    bottom: 0;
+    border-bottom: none;
+}
+
+/* Jogadores no campo */
+.field-player {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 0.65rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+    cursor: default;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    z-index: 2;
+}
+
+.field-player-top {
+    animation: pulse 1.5s ease-in-out infinite;
+    border-color: #ffc107;
+    box-shadow: 0 0 16px rgba(255, 193, 7, 0.6);
+}
+
+.field-player-label {
+    font-size: 0.6rem;
+    line-height: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.field-player-prob {
+    font-size: 0.55rem;
+    line-height: 1;
+    opacity: 0.9;
+    margin-top: 1px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 0 0 16px rgba(255, 193, 7, 0.6);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.25);
+        box-shadow: 0 0 24px rgba(255, 193, 7, 0.9);
+    }
+}
+
+/* ---- Cards ---- */
+.card {
+    border: none;
+    border-radius: 12px;
+}
+
+.card-header {
+    border-radius: 12px 12px 0 0 !important;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .field-player {
+        width: 34px;
+        height: 34px;
+        font-size: 0.55rem;
+    }
+
+    .field-player-label {
+        font-size: 0.5rem;
+    }
+
+    .field-player-prob {
+        font-size: 0.45rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .field-player {
+        width: 28px;
+        height: 28px;
+    }
+
+    .field-player-prob {
+        display: none;
+    }
+}
